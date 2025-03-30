@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Analysis</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="analysis.js"></script>
+    <script type="module" src="search-modal.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Фрекфентна Анализа</h1>
+        <hr>
+        <div class="text-area">
+            <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        </div>
+        <button class="action-btn" id="analysisButton">Анализирај</button>
+        <div class="dropdown-container">
+            <select id="analysisType">
+                <option value="textFrequency" selected>Фрекфенција на буква во текст (Default)</option>
+                <option value="wordFrequency">Фрекфенција на буква во збор</option>
+                <option value="firstLetterFrequency">Фрекфенција на прва буква во збор</option>
+                <option value="lastLetterFrequency">Фрекфенција на последна буква во збор</option>
+            </select>
+        </div>
+        <div class="table-container">
+            <table>
+                    <tr>
+                        <th></th><th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                    </tr>
+                    <tr>
+                        <th></th><th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                    </tr>
+                    <tr>
+                        <th>А</th><th>Б</th><th>В</th><th>Г</th><th>Д</th><th>ѓ</th>
+                        <th>Е</th><th>Ж</th><th>З</th><th>Ѕ</th><th>И</th>
+                        <th>Ј</th><th>К</th><th>Л</th><th>Љ</th><th>М</th>
+                        <th>Н</th><th>Њ</th><th>О</th><th>П</th><th>Р</th>
+                        <th>С</th><th>Т</th><th>Ќ</th><th>У</th><th>Ф</th>
+                        <th>Х</th><th>Ц</th><th>Ч</th><th>Џ</th><th>Ш</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                        <td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td><td><input type="text" maxlength="1"></td>
+                    </tr>
+                    <tr>
+                        <th></th><th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                    </tr>
+                    <tr>
+                        <th></th><th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                        <th></th><th></th><th></th><th></th><th></th>
+                    </tr>
+            </table>
+        </div>
+        <div class="button-container">
+            <button class="action-btn" id="swapButton">Промени Букви</button>
+            <button class="modal-btn" id="openSearchModalBtn">Пребарај збор</button>
+        </div>
+        <div class="text-area">
+            <textarea id="outputText" placeholder="******"></textarea>
+        </div>
+    </div>
+
+    <div id="searchModal" style="display:none;" class="modal-class">
+        <div>
+            <span id="closeSearchBtn" class="modal-class-close">&times;</span>
+            <div data-tip="Користи # за поединечен непознат карактер а * за било кој број на непознати карактери">
+                <input class="input-text-search-modal" value="" type="text" id="searchInput" name="test" placeholder="Пр: ##*а, започнува со 2 или повеќе карактери и завршува со а"/>
+            </div>
+            <button id="runButton" class="action-btn">Run</button>
+            <textarea id="resultField" class="result-input"></textarea>
+        </div>
+    </div>
+</body>
+<script>
+const mkUpper = ['А', 'Б', 'В', 'Г', 'Д', 'Ѓ', 'Е', 'Ж', 'З', 'Ѕ', 'И', 'Ј', 'К', 'Л', 'Љ', 'М', 'Н', 'Њ', 'О', 'П', 'Р', 'С', 'Т', 'Ќ', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Џ', 'Ш'];
+
+function shuffleArray(arr) {
+    let shuffled = arr.slice();
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+const macedonianUpperRandom = shuffleArray(mkUpper);
+
+console.log("Македонски букви:", mkUpper);
+console.log("Македонски букви (Измешани):", macedonianUpperRandom);
+
+const input = prompt("Внеси текст за моноалфабетско шифрирање: ").toUpperCase();
+
+let originalFilteredText = '';
+let transformedText = '';
+
+for (let i = 0; i < input.length; i++) {
+    const c = input[i];
+    const index = mkUpper.indexOf(c);
+    if (index !== -1) {
+        originalFilteredText += c;
+        transformedText += macedonianUpperRandom[index];
+    }
+}
+
+console.log("Филтриран оригинален текст:");
+console.log(originalFilteredText);
+
+console.log("Трансформиран текст:");
+console.log(transformedText);
+alert(transformedText);
+</script>
+</html>
