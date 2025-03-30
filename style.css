@@ -268,15 +268,3 @@
     color: #333;
     transition: border 0.3s ease;
 }
-
-.caret {
-    color: #00796b; /* Caret color */
-    font-weight: bold;
-    animation: blink 1s step-start infinite; /* Optional blinking effect */
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
-}
